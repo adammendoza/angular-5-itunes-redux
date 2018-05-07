@@ -1,0 +1,7 @@
+<search-music (search)="onMusicSearch($event)"></search-music>
+<div style="overflow:hidden">
+	<mat-spinner class="center" *ngIf="searchLoading | async" [diameter]="60"></mat-spinner>
+</div>
+<music-list *ngIf="!(searchLoading | async)" [songs$]="displayedSongs$" (addEvent)="add($event)"></music-list>
+<pagination *ngIf="!(searchLoading | async)" [count]="(songs$ | async).length" (goNext)="onNext($event)" (goPrev)="onPrevious($event)"
+ (goPage)="onPage($event)" [perPage]="perPage | async" [page]="currentPage | async"></pagination>

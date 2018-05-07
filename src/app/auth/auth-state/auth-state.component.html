@@ -1,0 +1,5 @@
+ <div *ngIf="currentAuthState">
+ {{currentAuthState.currentUser?.username}}
+<a *ngIf="!currentAuthState.loggedIn" mat-button [routerLink]="['signup']" [routerLinkActive]="['highlight-route']" [routerLinkActiveOptions]="{exact: false}">Signup</a>
+<a *ngIf="currentAuthState.loggedIn" mat-button (click)="logout()">Log out</a>
+ </div>

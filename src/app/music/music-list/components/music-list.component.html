@@ -1,0 +1,2 @@
+
+<song-detail *ngFor="let song of songs$ | async" [song]="song" (add)="addEvent.emit($event)"></song-detail>

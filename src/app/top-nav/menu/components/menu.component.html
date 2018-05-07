@@ -1,0 +1,11 @@
+<div fxShow="true" fxHide.gt-sm="true">
+	<div fxLayout="column">
+		<a mat-button [routerLink]="['signin']" [routerLinkActive]="['highlight-route']" [routerLinkActiveOptions]="{exact: true}">Home</a>
+		<a mat-button [routerLink]="['music']" [routerLinkActive]="['highlight-route']" [routerLinkActiveOptions]="{exact: false}">Music</a>
+	</div>
+
+</div>
+<div fxShow="true" fxHide.lt-md="true">
+	<a mat-button [routerLink]="['signin']" [routerLinkActive]="['highlight-route']" [routerLinkActiveOptions]="{exact: true}">Home</a>
+	<a mat-button [routerLink]="['music']" [routerLinkActive]="['highlight-route']" [routerLinkActiveOptions]="{exact: false}">Music</a>
+</div>

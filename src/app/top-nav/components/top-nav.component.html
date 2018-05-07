@@ -1,0 +1,25 @@
+<mat-toolbar fxLayout="row">
+	<span>Welcome</span>
+	<div fxShow="true" fxHide.lt-md="true">
+		<menu></menu>
+	</div>
+	<div fxShow="true" fxHide.gt-sm="true">
+		<a mat-button (click)="sidenav.toggle()">Show Menu</a>
+	</div>
+
+	<div fxFlex="auto" fxLayoutAlign="end">
+		<auth-state [authState]="currentAuthState | async" (logout)="logout()"></auth-state>
+	</div>
+</mat-toolbar>
+
+<mat-sidenav-container fxFlexFill>
+	<mat-sidenav #sidenav fxLayout="column">
+		<div fxLayout="column">
+			<a (click)="sidenav.toggle()" mat-button>Close</a>
+			<menu></menu>
+		</div>
+	</mat-sidenav>
+	<mat-sidenav-content fxFlexFill>
+		<router-outlet></router-outlet>
+	</mat-sidenav-content>
+</mat-sidenav-container>

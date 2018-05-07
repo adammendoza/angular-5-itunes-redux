@@ -1,0 +1,11 @@
+p {
+  font-family: Lato;
+}
+
+.highlight-route.mat-button{
+  background-color: #ececdf;
+}
+
+.center.mat-spinner{
+  margin: 0 auto;
+}

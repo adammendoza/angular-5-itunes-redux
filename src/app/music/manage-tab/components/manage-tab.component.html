@@ -1,0 +1,2 @@
+
+<song-details-manage *ngFor="let song of songs | async" [song]="song" (remove)="onRemove($event)"></song-details-manage>

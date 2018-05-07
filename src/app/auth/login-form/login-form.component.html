@@ -1,0 +1,44 @@
+<mat-card>
+	<mat-card-title>Login</mat-card-title>
+	<mat-card-content>
+		<form [formGroup]="signInForm" (ngSubmit)="submit()">
+			<div>
+				<mat-input-container>
+					<input type="text" matInput placeholder="Username" formControlName="username">
+					<mat-error [checkProperty]="'username'">
+						<ng-container *errorType="'required'">
+							Username is <b>required</b>
+						</ng-container>
+						<ng-container *errorType="'minlength'">
+							Username is too <b> short </b>
+						</ng-container>
+					</mat-error>
+				</mat-input-container>
+			</div>
+			<div>
+				<mat-input-container>
+					<input type="password" matInput placeholder="Password" formControlName="password">
+					<mat-error [checkProperty]="'password'">
+						<ng-container *errorType="'required'">
+							Password is <b>required</b>
+						</ng-container>
+						<ng-container *errorType="'minlength'">
+							Password is too <b> short </b>
+						</ng-container>
+					</mat-error>
+				</mat-input-container>
+			</div>
+			<div class="spinner">
+				<mat-spinner *ngIf="pending" [diameter]="22">
+				</mat-spinner>
+			</div>
+			<p *ngIf="errorMessage" class="loginError">
+				{{ errorMessage }}
+			</p>
+			<p class="loginButtons">
+				<button type="reset" (click)="reset()" mat-button>Reset</button>
+				<button type="submit" mat-button>Login</button>
+			</p>
+		</form>
+	</mat-card-content>
+</mat-card>

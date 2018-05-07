@@ -1,0 +1,8 @@
+<div class="pagination" *ngIf="count > 0">
+	<mat-card>
+		<span>{{ min }} of {{ max }} of {{ count }}</span>
+		<button mat-button (click)="onPrev(true)" [disabled]="page === 1">Previous</button>
+		<button mat-button [ngClass]="{'highlight-route': page === pageNum}" *ngFor="let pageNum of pages" (click)="onPage(pageNum)">{{pageNum}}</button>
+		<button mat-button (click)="onNext(true)" [disabled]="isLastPage()">Next</button>
+	</mat-card>
+</div>

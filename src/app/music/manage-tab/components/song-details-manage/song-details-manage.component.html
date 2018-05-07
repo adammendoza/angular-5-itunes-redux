@@ -1,0 +1,20 @@
+<mat-card>
+	<mat-card-title-group>
+		<img mat-card-sm-image [src]="artworkUrl100" />
+		<mat-card-title>{{ trackCensoredName }}</mat-card-title>
+		<mat-card-subtitle>Collection {{ collectionCesoredName }}</mat-card-subtitle>
+	</mat-card-title-group>
+	<mat-card-content>
+		<p>{{ collectionPrice | currency:'currencyCode': song?.currency }}</p>
+
+	</mat-card-content>
+	<mat-card-footer>
+		<div >
+			<p>Release date {{ releaseDate | date:'format':'longDate' }}</p>
+		</div>
+    <button mat-button (click)="remove.emit(this.song);" [disabled]="pendingRemove">{{ !pendingRemove ? 'Remove' : null }} 
+      <mat-spinner style="margin:auto;" *ngIf="pendingRemove" [diameter]="22">
+      </mat-spinner>
+    </button>
+	</mat-card-footer>
+</mat-card>
