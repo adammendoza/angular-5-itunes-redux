@@ -1,7 +1,3 @@
 /* Add application styles & imports to this file! */
 
-
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-body{
-}
+@import "~angular/material/prebuilt-themes/deeppurple-amber.css";
